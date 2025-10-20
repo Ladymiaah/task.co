@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function () {
+export default function HeroSection() {
     return(
         <div>
             <main className="bg-[#ffffff] ">
@@ -42,9 +42,9 @@ export default function () {
                 <h1 className="text-2xl sm:text-6xl text-[#010101] text-center">
                     Everything your team is looking for
                 </h1>
-                <p className="pt-3 text-sm sm:text-lg text-center text-[#777777] ">
-                    Task.co's is incredible flexibility can handle any type of job. And we never stop innovating.
-                </p>
+        <p className="pt-3 text-sm sm:text-lg text-center text-[#777777] ">
+          Task.co&apos;s incredible flexibility can handle any type of job. And we never stop innovating.
+        </p>
                  <Image 
                  src="/img3.png" 
                  alt="flexibility image" 

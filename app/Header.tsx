@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { X, Menu, WholeWord, WholeWordIcon, Globe, Globe2, ChevronRight, ChevronDown } from "lucide-react"; // for icons
+import { X, Menu } from "lucide-react"; // for icons
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,3 +80,6 @@ export default function Header() {
     </header>
   );
 }
+
+
+
