@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# task.co
 
-## Getting Started
+A small Next.js 15 project using React 19, Tailwind CSS, and the Geist Google fonts.
 
-First, run the development server:
+This repository contains a simple app scaffolded with Next.js. It includes a global layout that loads two Google fonts (Geist and Geist Mono), a header, and a hero section component used on the home page.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Quick facts
+
+- Next.js: 15.5.5
+- React: 19.1.0
+- Styling: Tailwind CSS (configured via `postcss.config.mjs` and `tailwindcss` dependency)
+- Icon set: `lucide-react`
+
+## Scripts
+
+The project uses the scripts defined in `package.json`.
+
+- `npm run dev` — Start the development server (uses Turbopack): runs `next dev --turbopack`
+- `npm run build` — Build the production app: runs `next build --turbopack`
+- `npm run start` — Start the production server: runs `next start`
+- `npm run lint` — Run ESLint
+
+## Getting started
+
+1. Install dependencies
+
+```powershell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Open the app
 
-## Learn More
+Open http://localhost:3000 in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — Next.js app directory
+  - `layout.tsx` — Root layout; imports global styles and Google fonts, renders the `Header` and page children.
+  - `page.tsx` — Home page that renders the `HeroSection` component.
+  - `Header.tsx` — Header component (site navigation/branding).
+  - `HeroSection.tsx` — Hero/landing section shown on the home page.
+- `public/` — Static assets
+- `globals.css` — Global styles (Tailwind entry)
+- `package.json` — Project metadata and scripts
+- `next.config.ts`, `tsconfig.json`, `eslint.config.mjs`, `postcss.config.mjs` — Config files
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes & tips
 
-## Deploy on Vercel
+- The project is configured to use Turbopack for development and build (`--turbopack` flags). If you want to use the classic Next.js bundler, remove those flags from the `dev` and `build` scripts.
+- Fonts are loaded using the `next/font/google` helpers inside `layout.tsx` — keep an eye on font loading behavior during production builds.
+- Tailwind is present as a dependency; ensure `globals.css` includes the Tailwind directives (`@tailwind base; @tailwind components; @tailwind utilities;`) for styles to apply.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Troubleshooting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- If you see type errors, run `npm run lint` and check TypeScript config in `tsconfig.json`.
+- If styles don't appear, confirm `globals.css` is imported in `layout.tsx` and Tailwind build is running correctly.
